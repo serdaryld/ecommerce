@@ -457,6 +457,37 @@ main{
 
 
 
+.size-selection {
+  margin: 0.5rem 0;
+
+  .size-options {
+    margin-top: 1rem;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+
+    .size-option {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid lightgrey;
+      border-radius: 5px;
+      background-color: white;
+      cursor: pointer;
+      transition: 0.2s border-color;
+
+      &:hover {
+        border: 1px solid gray;
+      }
+
+      &.selected {
+        border: 2px solid #2a2a2a;
+      }
+    }
+  }
+}
 
 
 .write-comment-container{

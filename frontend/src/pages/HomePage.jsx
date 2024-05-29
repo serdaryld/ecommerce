@@ -106,7 +106,7 @@ export default function HomePage() {
         ) : error ? (
           <MessageBox variant="danger">{error}</MessageBox>
         ) : (
-        <Row className='mx-5 my-5'>
+        <Row className='mx-lg-5 my-5'>
          <h2>Featured Products</h2>
          <div className="products">
           <Row>

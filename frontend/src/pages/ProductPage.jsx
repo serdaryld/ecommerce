@@ -48,6 +48,7 @@ export default function ProductPage() {
 
   const [rating, setRating] = useState(0);
   const [comment, setComment] = useState('');
+  const [selectedSize, setSelectedSize] = useState(40);
 
   const [{ loading, error, product, loadingCreateReview }, dispatch] =
   useReducer(reducer, {
@@ -120,7 +121,10 @@ export default function ProductPage() {
     }
   };
    
-
+  const handleSizeClick = (size) => {
+    setSelectedSize(size);
+  };
+   
   
   return loading ? (
     <LoadingBox />
@@ -154,6 +158,22 @@ export default function ProductPage() {
             </ListGroup.Item>
             <ListGroup.Item className='product-page-info'>
               <p>{product.description}</p>
+            </ListGroup.Item>
+            <ListGroup.Item className="product-page-info">
+              <div className="size-selection">
+                <h5>Select Size</h5>
+                <div className="size-options">
+                  {[37, 38, 39, 40, 41, 42, 43, 44].map((size) => (
+                    <div
+                      key={size}
+                      className={`size-option ${selectedSize === size ? 'selected' : ''}`}
+                      onClick={() => handleSizeClick(size)}
+                    >
+                      {size}
+                    </div>
+                  ))}
+                </div>
+              </div>
             </ListGroup.Item>
           </ListGroup>
         </Col>
